@@ -9,7 +9,15 @@ Supports the OAuth 2.0 server-side flow. Read the Yammer docs for more details: 
 Add to your `Gemfile`:
 
 ```ruby
+gem 'omniauth'
 gem 'omniauth-yammer'
+```
+
+or even:
+
+```ruby
+gem 'omniauth'
+gem 'omniauth-yammer', :git => 'git://github.com/le0pard/omniauth-yammer.git'
 ```
 
 Then `bundle install`.
