@@ -33,7 +33,12 @@ module OmniAuth
       end
       
       def request_phase
-        options[:authorize_params] = {:scope => options[:scope]} if options[:scope]
+        options[:response_type] ||= 'code'
+        super
+      end
+      
+      def callback_phase
+        options[:grant_type] ||= 'authorization_code'
         super
       end
         
