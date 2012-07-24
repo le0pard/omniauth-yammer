@@ -1,8 +1,9 @@
-require 'omniauth/strategies/oauth2'
+require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
     class Yammer < OmniAuth::Strategies::OAuth2
+      
       option :name, 'yammer'
       
       option :client_options, {
@@ -29,6 +30,11 @@ module OmniAuth
 
       extra do
         prune!({:raw_info => raw_info})
+      end
+      
+      def request_phase
+        options[:authorize_params] = {:scope => options[:scope]} if options[:scope]
+        super
       end
         
       def build_access_token
