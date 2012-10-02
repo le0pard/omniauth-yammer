@@ -21,7 +21,7 @@ module OmniAuth
           :location => raw_info['location'],
           :image => raw_info['mugshot_url'],
           :description => raw_info['job_title'],
-          :email => raw_info['contact']['email_addresses'][0]['address'],
+          :email => primary_email,
           :urls => {
             :yammer => raw_info['web_url']
           }
@@ -61,6 +61,9 @@ module OmniAuth
         end
       end
       
+      def primary_email
+        raw_info['contact']['email_addresses'].detect{|address| address['type'] == 'primary'}['address']
+      end
     end
   end
 end
