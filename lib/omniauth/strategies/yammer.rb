@@ -17,7 +17,7 @@ module OmniAuth
       info do
         prune!({
           :nickname => raw_info['name'],
-          :full_name => raw_info['full_name'],
+          :name => raw_info['full_name'],
           :location => raw_info['location'],
           :image => raw_info['mugshot_url'],
           :description => raw_info['job_title'],
