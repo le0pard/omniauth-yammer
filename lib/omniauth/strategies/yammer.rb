@@ -7,7 +7,7 @@ module OmniAuth
       option :name, 'yammer'
       
       option :client_options, {
-        :site => 'https://www.yammer.com',
+        :site => 'https://www.staging.yammer.com',
         :authorize_url => '/dialog/oauth',
         :token_url => '/oauth2/access_token.json'
       }
