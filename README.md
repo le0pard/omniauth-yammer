@@ -34,6 +34,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+For changing default domain in gem (for dev or testing purpose) use YAMMER\_DOMAIN environment variable:
+
+```ruby
+ENV['YAMMER_DOMAIN'] = 'https://staging.yammer.com'
+```
+
 ### Devise
 
 Add this line to devise config:
@@ -46,14 +52,14 @@ config.omniauth :yammer, "Consumer key", "Consumer secret"
 If you have this error:
 
     SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
-    
+
 Then you can fix this by setting valid cert:
 
     wget http://www.cacert.org/certs/root.crt
     cat root.crt >> lib/ca-bundle.crt
-    
+
 and edit devise config:
 
 ```ruby
-config.omniauth :yammer, "Consumer key", "Consumer secret", {:client_options => {:ssl => {:ca_file => "#{Rails.root}/lib/ca-bundle.crt" }}} 
+config.omniauth :yammer, "Consumer key", "Consumer secret", {:client_options => {:ssl => {:ca_file => "#{Rails.root}/lib/ca-bundle.crt" }}}
 ```
