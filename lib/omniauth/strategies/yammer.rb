@@ -53,7 +53,7 @@ module OmniAuth
       end
 
       def primary_email
-        raw_info['contact']['email_addresses'].detect{|address| address['type'] == 'primary'}['address']
+        raw_info['contact']['email_addresses'].detect{|address| address['type'] == 'primary'}['address'] rescue nil
       end
 
       private
