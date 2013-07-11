@@ -2,7 +2,7 @@
 
 This gem contains the Yammer strategy for OmniAuth 1.0.
 
-Supports the OAuth 2.0 server-side flow. Read the Yammer docs for more details: https://developer.yammer.com/api/oauth2.html
+Supports the OAuth 2.0 server-side flow. Read the Yammer docs for more details: https://developer.yammer.com/authentication/#a-oauth2
 
 ## Installing
 
