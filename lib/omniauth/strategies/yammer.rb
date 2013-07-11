@@ -52,6 +52,10 @@ module OmniAuth
         @raw_info ||= access_token.get('/api/v1/users/current.json').parsed
       end
 
+      def primary_email
+        raw_info['contact']['email_addresses'].detect{|address| address['type'] == 'primary'}['address']
+      end
+
       private
 
       def prune!(hash)
@@ -61,9 +65,8 @@ module OmniAuth
         end
       end
 
-      def primary_email
-        raw_info['contact']['email_addresses'].detect{|address| address['type'] == 'primary'}['address']
-      end
     end
   end
 end
+
+OmniAuth.config.add_camelization 'yammer', 'Yammer'
