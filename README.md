@@ -1,4 +1,4 @@
-# OmniAuth Yammer
+# OmniAuth Yammer [![Build Status](https://travis-ci.org/le0pard/omniauth-yammer.png)](https://travis-ci.org/le0pard/omniauth-yammer)
 
 This gem contains the Yammer strategy for OmniAuth 1.0.
 
