@@ -4,7 +4,7 @@ describe OmniAuth::Strategies::Yammer do
   subject { OmniAuth::Strategies::Yammer.new(nil) }
 
   it 'should add a camelization for itself' do
-    OmniAuth::Utils.camelize('yammer').should == 'Yammer1'
+    OmniAuth::Utils.camelize('yammer').should == 'Yammer'
   end
 
   describe '#client' do
