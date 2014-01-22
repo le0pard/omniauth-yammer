@@ -7,8 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{OmniAuth strategy for Yammer}
   gem.summary       = %q{OmniAuth strategy for Yammer}
   gem.homepage      = "https://github.com/le0pard/omniauth-yammer"
-
-  gem.rubyforge_project = "omniauth-yammer"
+  gem.license       = "MIT"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
