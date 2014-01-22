@@ -1,4 +1,6 @@
-# OmniAuth Yammer [![Build Status](https://travis-ci.org/le0pard/omniauth-yammer.png)](https://travis-ci.org/le0pard/omniauth-yammer)
+# OmniAuth Yammer 
+[![Build Status](https://travis-ci.org/le0pard/omniauth-yammer.png)](https://travis-ci.org/le0pard/omniauth-yammer)
+[![Code Climate](https://codeclimate.com/github/le0pard/omniauth-yammer.png)](https://codeclimate.com/github/le0pard/omniauth-yammer)
 
 This gem contains the Yammer strategy for OmniAuth 1.0.
 
