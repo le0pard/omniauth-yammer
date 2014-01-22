@@ -9,7 +9,13 @@ require 'omniauth'
 require 'omniauth-yammer'
 
 RSpec.configure do |config|
+  
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
   config.include WebMock::API
   config.include Rack::Test::Methods
-  config.extend  OmniAuth::Test::StrategyMacros, :type => :strategy
+  config.extend  OmniAuth::Test::StrategyMacros, type: :strategy
+  
 end
