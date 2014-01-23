@@ -8,7 +8,7 @@ describe OmniAuth::Strategies::Yammer do
   end
 
   describe '#client' do
-    it 'has correct GaggleAMP site' do
+    it 'has correct Yammer site' do
       expect(subject.client.site).to eq('https://www.yammer.com')
     end
 
@@ -40,7 +40,8 @@ describe OmniAuth::Strategies::Yammer do
   describe '#info' do
     context 'and therefore has all the necessary fields' do
       before :each do
-        allow(subject).to receive(:raw_info) { {
+        allow(subject).to receive(:raw_info) {
+          {
             'full_name' => 'John Doe',
             'contact' => {
               'email_addresses' => [
@@ -48,7 +49,8 @@ describe OmniAuth::Strategies::Yammer do
               ]
             },
             'name' => 'JohnDoe'
-          } }
+          }
+        }
       end
 
       it { expect(subject.info).to have_key :name }
