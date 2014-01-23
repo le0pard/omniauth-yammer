@@ -1,4 +1,4 @@
-# OmniAuth Yammer 
+# OmniAuth Yammer
 [![Build Status](https://travis-ci.org/le0pard/omniauth-yammer.png)](https://travis-ci.org/le0pard/omniauth-yammer)
 [![Code Climate](https://codeclimate.com/github/le0pard/omniauth-yammer.png)](https://codeclimate.com/github/le0pard/omniauth-yammer)
 
@@ -19,7 +19,7 @@ or even:
 
 ```ruby
 gem 'omniauth'
-gem 'omniauth-yammer', :git => 'git://github.com/le0pard/omniauth-yammer.git'
+gem 'omniauth-yammer', :github => 'le0pard/omniauth-yammer'
 ```
 
 Then `bundle install`.
