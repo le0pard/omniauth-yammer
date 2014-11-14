@@ -70,9 +70,11 @@ describe OmniAuth::Strategies::Yammer do
   describe '#extra' do
     before :each do
       allow(subject).to receive(:raw_info) { { 'foo' => 'bar' } }
+      allow(subject).to receive(:groups) { { 'baz' => 'bam' } }
     end
 
     it { expect(subject.extra[:raw_info]).to eq({ 'foo' => 'bar' }) }
+    it { expect(subject.extra[:groups]).to eq({ 'baz' => 'bam'}) }
   end
 
   describe '#raw_info' do
