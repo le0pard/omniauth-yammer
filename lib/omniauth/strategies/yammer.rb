@@ -44,7 +44,7 @@ module OmniAuth
       end
 
       def build_access_token
-        access_token = params[:access_token] || super
+        access_token = request.params[:access_token] || super
         token = eval(access_token.token)['token']
         @access_token = ::OAuth2::AccessToken.new(client, token, access_token.params)
       end
