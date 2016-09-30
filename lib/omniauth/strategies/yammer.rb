@@ -5,6 +5,7 @@ module OmniAuth
     class Yammer < OmniAuth::Strategies::OAuth2
 
       option :name, 'yammer'
+      option :provider_ignores_state, true
 
       option :client_options, {
         :site => (ENV['YAMMER_DOMAIN'] || 'https://www.yammer.com'),
