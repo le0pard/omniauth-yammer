@@ -4,6 +4,7 @@
 .config
 .yardoc
 .project
+.idea
 Gemfile.lock
 InstalledFiles
 _yardoc
