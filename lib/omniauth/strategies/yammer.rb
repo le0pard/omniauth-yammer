@@ -30,7 +30,11 @@ module OmniAuth
       end
 
       extra do
-        prune!({:raw_info => raw_info})
+        prune!({:raw_info => raw_info, :groups => groups})
+      end
+
+      def groups
+        @groups ||= access_token.get("/api/v1/groups/for_user/#{uid}.json").parsed
       end
 
       def request_phase
