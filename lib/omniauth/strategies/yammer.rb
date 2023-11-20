@@ -9,8 +9,8 @@ module OmniAuth
 
       option :client_options, {
         :site => (ENV['YAMMER_DOMAIN'] || 'https://www.yammer.com'),
-        :authorize_url => '/dialog/oauth',
-        :token_url => '/oauth2/access_token.json'
+        :authorize_url => '/oauth2/authorize',
+        :token_url => '/oauth2/access_token'
       }
 
       uid { raw_info['id'] }
