@@ -10,7 +10,8 @@ module OmniAuth
       option :client_options, {
         :site => (ENV['YAMMER_DOMAIN'] || 'https://www.yammer.com'),
         :authorize_url => '/oauth2/authorize',
-        :token_url => '/oauth2/access_token'
+        :token_url => '/oauth2/access_token.json',
+        :auth_scheme => 'request_body'
       }
 
       uid { raw_info['id'] }
@@ -45,7 +46,7 @@ module OmniAuth
 
       def build_access_token
         access_token = request.params[:access_token] || super
-        token = eval(access_token.token)['token']
+        token = access_token.response.parsed.access_token.token
         @access_token = ::OAuth2::AccessToken.new(client, token, access_token.params)
       end
 
